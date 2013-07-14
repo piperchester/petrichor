@@ -27,7 +27,7 @@ public class Petrichor extends Robot
 	 * What to do when you see another robot.
 	 */
 	public void onScannedRobot(ScannedRobotEvent e) {
-		fire(1);
+		fire(5);
 	}
 
 	/**
