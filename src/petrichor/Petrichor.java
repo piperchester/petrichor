@@ -5,7 +5,7 @@ import java.awt.Color;
 /**
  * Petrichor - a robot by Piper Chester and Michael Timbrook
  */
-public class Petrichor extends Robot
+public class Petrichor extends AdvancedRobot
 {
 	/**
 	 * Petrichor's default behavior. Initializiation of robot occurs here.
