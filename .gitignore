@@ -8,3 +8,6 @@
 # IntelliJ IDEA #
 *.idea
 *.iml
+
+# My stuff (Michael) #
+runrobocode
