@@ -8,7 +8,7 @@ import java.awt.Color;
 public class Petrichor extends AdvancedRobot
 {
 	/**
-	 * Petrichor's default behavior. Initializiation of robot occurs here.
+	 * Petrichor's default behavior. Initialization of robot occurs here.
 	 */
 	public void run() {
 	
