@@ -23,6 +23,8 @@
  */
 
 package petrichor;
+import behavior.Aggressive;
+import behavior.Behavior;
 import robocode.*;
 import java.awt.Color;
 
@@ -31,6 +33,8 @@ import java.awt.Color;
  */
 public class Petrichor extends AdvancedRobot
 {
+    private Behavior active;
+
 	/**
 	 * Petrichor's default behavior. Initialization of robot occurs here.
 	 */
@@ -38,33 +42,32 @@ public class Petrichor extends AdvancedRobot
 	
 		setColors(Color.blue, Color.cyan, Color.green); // Body, gun, radar
 
-		// Robot main loop.
-		while(true) {
-			ahead(100);
-			turnGunRight(360);
-			back(100);
-			turnGunRight(360);
-		}
+		// Set behavior
+        active = new Aggressive(this);
+
+        // Sit in the behaviors run loop
+        while (active.runLoop());
+
 	}
 
 	/**
 	 * What to do when you see another robot.
 	 */
 	public void onScannedRobot(ScannedRobotEvent e) {
-		fire(5);
+		active.onScannedRobot(e);
 	}
 
 	/**
 	 * What to do when you're hit by a bullet.
 	 */
 	public void onHitByBullet(HitByBulletEvent e) {
-		back(10);
+		active.onHitByBullet(e);
 	}
 	
 	/**
 	 * onHitWall: What to do when you hit a wall
 	 */
 	public void onHitWall(HitWallEvent e) {
-		back(20);
+		active.onHitWall(e);
 	}	
 }
